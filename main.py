@@ -41,7 +41,7 @@ STYLES = {
 client = Groq(api_key=config.GROQ_API_KEY)
 
 def analyze_image(uploaded_file, style):
-    encoded_image = base64.b64encode(uploaded_file.getvalue()).decode('utf-8')
+    encoded = base64.b64encode(uploaded_file.getvalue()).decode('utf-8')
     response = client.chat.completions.create(
         model = config.GROQ_VISION_MODEL,
         messages = [
