@@ -3,7 +3,7 @@ from io import BytesIO
 
 import streamlit as st
 from PIL import Image
-from groq import groq
+from groq import Groq
 import config
 
 st.set_page_config(page_title="AI VISIONARY", page_icon=":mag:", layout="wide")
