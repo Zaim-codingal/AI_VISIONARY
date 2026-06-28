@@ -59,7 +59,7 @@ def analyze_image(uploaded_file, style):
 
 uploaded_file = st.file_uploader("Upload an image to analyze", type=["jpg", "jpeg", "png"])
 
-report style = st.selectbox("Select a report style", list(STYLES))
+report_style = st.selectbox("Select a report style", list(STYLES))
 
 if uploaded_file:
     st.image(
