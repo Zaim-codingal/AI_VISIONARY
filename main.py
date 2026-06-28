@@ -57,9 +57,9 @@ def analyze_image(uploaded_file, style):
 
     return response.choices[0].message.content
 
-uploaded_file = st.file_uploader("Upload an image to analyze", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload an image to analyze", type=["jpg", "jpeg", "png"],)
 
-report_style = st.selectbox("Select a report style", list(STYLES))
+report_style = st.selectbox("Choose report style", list(STYLES))
 
 if uploaded_file:
     st.image(
@@ -71,7 +71,7 @@ if uploaded_file:
     if st.button("Analyze Image"):
         if not config.GROQ_API_KEY:
             st.error("Groq key is missing. Please set GROQ_API_KEY in your .env file.")
-        elif not uploaded file:
+        elif not uploaded_file:
             st.error("Please upload an image to analyze.")
         else:
             with st.spinner("Analyzing image..."):
